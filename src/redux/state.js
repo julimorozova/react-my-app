@@ -17,6 +17,10 @@ let state = {
             {id: 2, message: 'How are you?'},
             {id: 3, message: 'I am fine'}
         ]
+    },
+    sidebar: {
+
     }
+
 }
 export default state;
