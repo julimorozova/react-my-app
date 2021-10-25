@@ -1,6 +1,7 @@
-import {renderEntireTree} from "../render";
+let renderEntireTree = () => {
+}
 
-let state = {
+const state = {
     profilePage: {
         newPostText: 'Hi!',
         postsData: [
@@ -28,6 +29,7 @@ let state = {
 
 }
 
+window.state = state;
 export const addPost = () => {
     let newPost = {
         id: 5,
@@ -58,5 +60,9 @@ export const addMessage = () => {
 export const updateNewMessageText = (newText) => {
     state.dialogsPage.newMessageText = newText;
     renderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    renderEntireTree = observer; //observer  наблюдатель //addEventListener
 }
 export default state;
