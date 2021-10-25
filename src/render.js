@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addPost} from "./redux/state";
+import {addMessage, addPost, updateNewMessageText, updateNewPostText} from "./redux/state";
 
 export const renderEntireTree = (props) => {
-    console.log(props)
     ReactDOM.render(
         <React.StrictMode>
-            <App state={props} addPost={addPost}/>;
+            <App state={props}
+                 addPost={addPost}
+                 updateNewPostText={updateNewPostText}
+                 addMessage={addMessage}
+                 updateNewMessageText={updateNewMessageText}
+
+            />;
         </React.StrictMode>,
         document.getElementById('root')
     );

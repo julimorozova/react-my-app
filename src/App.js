@@ -6,6 +6,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 
 
+
 const App = (props) => {
     return (
         <BrowserRouter>
@@ -18,9 +19,17 @@ const App = (props) => {
 
                     <Route path='/dialogs' render={() => <Dialogs
                         dialogs={props.state.dialogsPage.dialogsData}
-                        messages={props.state.dialogsPage.messagesData}/>}/>
+                        messages={props.state.dialogsPage.messagesData}
+                        newMessageText={props.state.dialogsPage.newMessageText}
+                        addMessage={props.addMessage}
+                        updateNewMessageText={props.updateNewMessageText} />}
+                    />
                     <Route path='/profile' render={() => <Profile
-                        posts={props.state.profilePage.postsData} addPost={props.addPost}/> }/>
+                        posts={props.state.profilePage.postsData}
+                        newPostText={props.state.profilePage.newPostText}
+                        updateNewPostText={props.updateNewPostText}
+                        addPost={props.addPost}/> }
+                    />
                 </div>
             </div>
         </BrowserRouter>
