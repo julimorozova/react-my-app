@@ -60,7 +60,7 @@ const store = {
         this._state.profilePage.newPostText = newText;
         this._callSubscriber(this._state);
     },*/
-  /*  updateNewMessageText(newText) {
+    /* updateNewMessageText(newText) {
         this._state.dialogsPage.newMessageText = newText;
         this._callSubscriber(this._state);
     },*/
