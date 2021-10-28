@@ -2,11 +2,6 @@ import profileReducer from "./profileReducer";
 import sidebarReducer from "./sidebarReducer";
 import dialogsReducer from "./dialogsReducer";
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 const store = {
     _state: {
@@ -73,23 +68,12 @@ const store = {
         this._callSubscriber = observer; //observer  наблюдатель //addEventListener
     },
     dispatch(action) { //action - object { type: 'ADD-POST' }
-
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
         this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action);
         this._callSubscriber(this._state);
     },
 }
-
-
-export const addPostActionCreator = () => ({ type: ADD_POST })
-export const updateNewPostTextActionCreator = (newText) =>
-    ({ type: UPDATE_NEW_POST_TEXT, newText })
-
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE })
-export const updateNewMessageTextActionCreator = (newText) =>
-    ({ type: UPDATE_NEW_MESSAGE_TEXT, newText })
-
 
 window.store = store;
 
